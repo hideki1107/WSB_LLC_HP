@@ -1,6 +1,7 @@
 .hero {
   padding: clamp(3rem, 12vw, 5.5rem) 0 var(--space-section);
   border-bottom: 1px solid var(--border);
+  text-align: center;
 }
 
 .hero--company {
@@ -184,6 +185,7 @@ section:last-of-type {
 
   .hero--company {
     min-height: 84vh;
+    justify-content: center;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -210,7 +212,7 @@ section:last-of-type {
   }
 
   .section--after-hero {
-    margin-top: 72vh;
+    margin-top: 88vh;
   }
 
   section {

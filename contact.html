@@ -25,8 +25,8 @@
         <img class="logo__image" src="./assets/logo.png" alt="WSBロゴ" />
       </a>
       <nav class="nav nav--header" id="header-nav" aria-label="ヘッダーナビゲーション">
-        <a href="./index.html#profile">企業情報</a>
         <a href="./index.html#business">事業内容</a>
+        <a href="./index.html#profile">企業情報</a>
         <a href="./index.html#access">アクセス</a>
         <a href="./contact.html">Contact</a>
       </nav>
@@ -40,8 +40,8 @@
           <img class="logo__image" src="./assets/logo.png" alt="WSBロゴ" />
         </a>
         <nav class="nav nav--sidebar" aria-label="サイドナビゲーション">
-          <a href="./index.html#profile">企業情報</a>
           <a href="./index.html#business">事業内容</a>
+          <a href="./index.html#profile">企業情報</a>
           <a href="./index.html#access">アクセス</a>
           <a href="./contact.html">Contact</a>
         </nav>
@@ -49,35 +49,61 @@
     </aside>
 
     <main>
-    <header class="hero">
-      <p class="hero__label">Contact</p>
-      <h1 class="hero__title"><span class="mark" aria-hidden="true">*</span>お問い合わせ</h1>
-      <p class="hero__lead">
-        ご相談・ご依頼は下記メールアドレスまでご連絡ください。内容を確認のうえ、担当者よりご返信いたします。
-      </p>
-    </header>
-
-    <section class="section-reveal" aria-labelledby="contact-info-heading">
-      <div class="section-head">
-        <span class="section-head__eyebrow">Contact Information</span>
-        <h2 id="contact-info-heading"><span class="mark" aria-hidden="true">*</span>連絡先</h2>
-      </div>
-
-      <div class="access-block">
-        <p>
-          <strong>メールアドレス</strong>
-          <a href="mailto:info@example.com">info@example.com</a>
+      <header class="hero">
+        <p class="hero__label">Contact</p>
+        <h1 class="hero__title"><span class="mark" aria-hidden="true">*</span>お問い合わせ</h1>
+        <p class="hero__lead">
+          ご相談・ご依頼はお気軽にお問い合わせください。<br />内容を確認のうえ、担当者よりご返信いたします。
         </p>
-        <p>
-          <strong>会社所在地</strong>
-          〒150-0043 東京都渋谷区道玄坂1-16-6 二葉ビル8b
-        </p>
-      </div>
-    </section>
-      <footer class="site-footer">
+      </header>
+
+      <section class="section-reveal section-reveal--fade" aria-labelledby="contact-form-heading">
+        <form id="contact-form" class="contact-form" novalidate>
+          <!-- Web3Forms access key（要設定） -->
+          <input type="hidden" name="access_key" value="6b9cf9dc-9621-4efc-8095-e99b26520979" />
+          <input type="hidden" name="subject" value="【合同会社WSB】お問い合わせが届きました" />
+          <input type="hidden" name="from_name" value="WSB HP お問い合わせフォーム" />
+          <!-- スパム対策 -->
+          <input type="checkbox" name="botcheck" style="display:none" />
+
+          <div class="form-group">
+            <label for="name">お名前 <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="山田 太郎" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="example@mail.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="inquiry-type">お問い合わせ種別</label>
+            <select id="inquiry-type" name="inquiry_type">
+              <option value="">選択してください</option>
+              <option value="HP作成">HP作成</option>
+              <option value="EC作成">EC作成</option>
+              <option value="物販">物販</option>
+              <option value="アーティスト事業">アーティスト事業</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+            <textarea id="message" name="message" placeholder="ご相談内容をご記入ください。" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">送信する</button>
+        </form>
+
+        <div id="form-result"></div>
+      </section>
+
+
+<footer class="site-footer">
         <nav class="footer-nav" aria-label="フッターナビゲーション">
-          <a href="./index.html#profile">会社概要</a>
           <a href="./index.html#business">事業内容</a>
+          <a href="./index.html#profile">会社概要</a>
           <a href="./index.html#access">アクセス</a>
           <a href="./contact.html">Contact</a>
         </nav>
@@ -89,5 +115,6 @@
   <script src="./js/mobile-menu.js"></script>
   <script src="./js/section-reveal.js"></script>
   <script src="./js/footer.js"></script>
+  <script src="./js/contact-form.js"></script>
 </body>
 </html>

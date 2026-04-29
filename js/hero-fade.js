@@ -12,10 +12,12 @@
 
   function updateHeroOpacity() {
     var isMobile = window.innerWidth <= 900;
-    var startOffset = isMobile ? 24 : 0;
-    var fadeDistance = isMobile
-      ? Math.max(window.innerHeight * 0.42, 220)
-      : Math.max(window.innerHeight * 0.1, 48);
+    if (isMobile) {
+      hero.style.setProperty("--company-hero-opacity", "1");
+      return;
+    }
+    var startOffset = 0;
+    var fadeDistance = Math.max(window.innerHeight * 0.1, 48);
     var progress = Math.min(Math.max(window.scrollY - startOffset, 0) / fadeDistance, 1);
     hero.style.setProperty("--company-hero-opacity", String(1 - progress));
   }

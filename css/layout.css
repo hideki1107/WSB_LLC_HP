@@ -199,6 +199,7 @@ main {
   main {
     max-width: 100%;
     padding-bottom: 5rem;
+    display: flow-root;
   }
 
   .footer-nav {
