@@ -149,6 +149,12 @@
   gap: 1.25rem;
 }
 
+a.biz-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
 .biz-card {
   position: relative;
   overflow: hidden;
