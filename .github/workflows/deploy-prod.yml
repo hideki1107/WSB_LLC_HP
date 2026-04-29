@@ -1,0 +1,32 @@
+on:
+  push:
+    branches:
+      - prod
+  workflow_dispatch:
+
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp-1.lolipop.jp
+          username: ${{ secrets.PROD_ACCOUNT }}
+          password: ${{ secrets.PROD_PASSWORD }}
+          server-dir: /
+          exclude: |
+            .git*
+            .git*/**
+            node_modules/**
+            package.json
+            yarn.lock
+            composer.lock
+            composer.json
+            vendor/**
+            .vscode/**
