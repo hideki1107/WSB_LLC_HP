@@ -209,6 +209,12 @@ a.biz-card {
   letter-spacing: 0.01em;
 }
 
+.biz-card h3 i {
+  color: var(--accent);
+  font-size: 0.95em;
+  margin-right: 0.1em;
+}
+
 .biz-card p {
   margin: 0;
   font-size: 0.875rem;
