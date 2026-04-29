@@ -60,6 +60,11 @@
   opacity: 0;
 }
 
+.site-header.is-menu-open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 .page-layout {
   max-width: none;
   width: 100%;
@@ -121,6 +126,13 @@ body.footer-is-visible .site-footer {
 
 .site-footer p {
   margin: 0;
+}
+
+.site-footer__meta {
+  margin-top: 0.35rem;
+  font-size: 0.7rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .footer-nav {

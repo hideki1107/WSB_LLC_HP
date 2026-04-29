@@ -4,6 +4,12 @@
   var body = document.body;
 
   function updateHeaderVisibility() {
+    if (header.classList.contains("is-menu-open")) {
+      header.classList.remove("is-hidden");
+      body.classList.remove("header-is-hidden");
+      return;
+    }
+
     if (window.scrollY <= 0) {
       header.classList.remove("is-hidden");
       body.classList.remove("header-is-hidden");
