@@ -1,0 +1,257 @@
+.hero {
+  padding: clamp(3rem, 12vw, 5.5rem) 0 var(--space-section);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero--company {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  transform: none;
+  z-index: 0;
+  opacity: var(--company-hero-opacity, 1);
+  background-image:
+    linear-gradient(rgba(227, 244, 248, 0.84), rgba(232, 247, 243, 0.9)),
+    url("../assets/company-hero.png");
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.25s linear;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-marquee {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-marquee--top {
+  top: 2.25rem;
+}
+
+.hero-marquee--bottom {
+  bottom: clamp(6rem, 14vh, 9rem);
+}
+
+.hero-marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 2.5rem;
+  white-space: nowrap;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(84, 112, 125, 0.35);
+}
+
+.hero-marquee--top .hero-marquee__track {
+  animation: marquee-right 26s linear infinite;
+}
+
+.hero-marquee--bottom .hero-marquee__track {
+  animation: marquee-left 26s linear infinite;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.section--after-hero {
+  margin-top: 86vh;
+}
+
+.hero__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
+.hero__lead {
+  margin: 1.25rem 0 0;
+  max-width: 36em;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.hero--company .hero__lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+  padding: var(--space-section) 0;
+  border-bottom: 1px solid var(--border);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+.section-reveal {
+  opacity: 0;
+  transform: translateX(56px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.section-reveal.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section-reveal--fade {
+  transform: none;
+}
+
+.section-reveal--fade.is-visible {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-marquee__track {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-reveal {
+    transform: none;
+  }
+
+  .section-reveal.is-visible {
+    transform: none;
+  }
+
+  .hero--company {
+    min-height: 84vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-marquee--top {
+    top: 1.25rem;
+  }
+
+  .hero-marquee--bottom {
+    bottom: 3.75rem;
+  }
+
+  .hero-marquee__track {
+    gap: 1.5rem;
+    font-size: clamp(1.25rem, 6vw, 1.9rem);
+  }
+
+  .hero__title {
+    font-size: clamp(1.6rem, 8vw, 2.15rem);
+  }
+
+  .hero__lead {
+    font-size: 0.9rem;
+  }
+
+  .section--after-hero {
+    margin-top: 72vh;
+  }
+
+  section {
+    min-height: auto;
+    padding: clamp(2.25rem, 10vw, 3.5rem) 0;
+  }
+}
+
+.profile-table-wrap {
+  overflow-x: auto;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.profile-table th,
+.profile-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-table tr:last-child th,
+.profile-table tr:last-child td {
+  border-bottom: none;
+}
+
+.profile-table th {
+  width: 11rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--accent-soft);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .profile-table th,
+  .profile-table td {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  .profile-table th {
+    border-bottom: none;
+  }
+}

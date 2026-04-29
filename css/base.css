@@ -1,0 +1,61 @@
+:root {
+  --bg: #eef6f8;
+  --surface: #f8fdff;
+  --text: #1f2f3a;
+  --text-muted: #54707d;
+  --border: #cfe1e7;
+  --accent: #2f6f89;
+  --accent-soft: rgba(76, 155, 164, 0.16);
+  --space-section: clamp(4rem, 10vw, 7rem);
+  --max: 920px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(rgba(238, 246, 248, 0.82), rgba(238, 246, 248, 0.82)),
+    url("../assets/company-hero.png") center / cover no-repeat;
+  filter: blur(10px);
+  transform: scale(1.04);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(238, 246, 248, 0.35);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
