@@ -153,6 +153,14 @@ section:last-of-type {
   transform: none;
 }
 
+.section-reveal--left {
+  transform: translateX(-56px);
+}
+
+.section-reveal--left.is-visible {
+  transform: translateX(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .section-reveal {
     opacity: 1;
